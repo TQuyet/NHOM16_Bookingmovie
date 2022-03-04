@@ -10,7 +10,7 @@ $movie = mysqli_fetch_array($qry2);
 		<div class="content-top">
 			<div class="section group">
 				<div class="about span_1_of_2">
-					<h3 style="color:black;" class="text-center">BOOKING HISTORY</h3>
+					<h3 style="color:black;" class="text-center">Lịch sử đặt vé</h3>
 					<?php include('msgbox.php'); ?>
 					<?php
 					$bk = mysqli_query($con, "select * from tbl_bookings where user_id='" . $_SESSION['user'] . "'");
@@ -20,11 +20,11 @@ $movie = mysqli_fetch_array($qry2);
 							<thead>
 								<th>Vé</th>
 								<th>Phim</th>
-								<th>Theatre</th>
-								<th>Screen</th>
-								<th>Show</th>
-								<th>Seats</th>
-								<th>Amount</th>
+								<th>Tên rạp</th>
+								<th>Màn hình</th>
+								<th>Tên phim</th>
+								<th>Ghế</th>
+								<th>Thành tiền</th>
 								<th></th>
 							</thead>
 							<tbody>
@@ -87,14 +87,11 @@ $movie = mysqli_fetch_array($qry2);
 					}
 					?>
 				</div>
-				<?php include('movie_sidebar.php'); ?>
-
 			</div>
 			<div class="clear"></div>
 		</div>
 	</div>
 </div>
-<?php include('footer.php'); ?>
 <script type="text/javascript">
 	$('#seats').change(function() {
 		var charge = <?php echo $screen['charge']; ?>;

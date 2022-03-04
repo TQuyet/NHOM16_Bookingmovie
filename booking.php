@@ -131,7 +131,6 @@ $movie = mysqli_fetch_array($qry2);
 		</div>
 	</div>
 </div>
-<?php include('footer.php'); ?>
 <script type="text/javascript">
 	$('#seats').change(function() {
 		var charge = <?php echo $screen['charge']; ?>;
