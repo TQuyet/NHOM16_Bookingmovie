@@ -18,6 +18,9 @@
 		<div class="d-flex justify-content-around" id="navbarNavDropdown">
 			<ul class="navbar-nav">
 				<li class="nav-item">
+					<a class="nav-link" href="index.php">Trang Chủ</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" aria-current="page" href="pagemovie.php">Phim</a>
 				</li>
 				<li class="nav-item">
@@ -92,16 +95,14 @@
 			<div class="row mt-4">
 				<!--Grid column-->
 				<div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-					<h5 class="text-uppercase mb-4">About company</h5>
+					<h5 class="text-uppercase mb-4">Nhóm 16 Booking Movie</h5>
 
 					<p>
-						At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-						voluptatum deleniti atque corrupti.
+						Môn học : Công nghệ phần mềm
 					</p>
 
 					<p>
-						Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
-						molestias.
+						Giảng viên :
 					</p>
 
 					<div class="mt-4">
@@ -120,22 +121,16 @@
 
 				<!--Grid column-->
 				<div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-					<h5 class="text-uppercase mb-4 pb-1">Search something</h5>
-
-					<div class="form-outline form-white mb-4">
-						<input type="text" id="formControlLg" class="form-control form-control-lg" />
-						<label class="form-label" for="formControlLg">Search</label>
-					</div>
 
 					<ul class="fa-ul" style="margin-left: 1.65em;">
 						<li class="mb-3">
-							<span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Warsaw, 00-967, Poland</span>
+							<span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">175 Tây Sơn - Trường đại học Thủy Lợi</span>
 						</li>
 						<li class="mb-3">
-							<span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">contact@example.com</span>
+							<span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">Nhom16@gmail.com</span>
 						</li>
 						<li class="mb-3">
-							<span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 48 234 567 88</span>
+							<span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">0123456789</span>
 						</li>
 					</ul>
 				</div>
@@ -143,21 +138,21 @@
 
 				<!--Grid column-->
 				<div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-					<h5 class="text-uppercase mb-4">Opening hours</h5>
+					<h5 class="text-uppercase mb-4">Giờ mở cửa</h5>
 
 					<table class="table text-center text-dark">
 						<tbody class="fw-normal">
 							<tr>
-								<td>Mon - Thu:</td>
-								<td>8am - 9pm</td>
+								<td>T2 - T5:</td>
+								<td>8am - 12pm</td>
 							</tr>
 							<tr>
-								<td>Fri - Sat:</td>
+								<td>T6 - T7:</td>
 								<td>8am - 1am</td>
 							</tr>
 							<tr>
-								<td>Sunday:</td>
-								<td>9am - 10pm</td>
+								<td>CN</td>
+								<td>Cả ngày</td>
 							</tr>
 						</tbody>
 					</table>
@@ -171,7 +166,7 @@
 		<!-- Copyright -->
 		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
 			© 2020 Copyright:
-			<a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+			<a class="text-white" href="https://mdbootstrap.com/">Nhom16@gmail.com</a>
 		</div>
 		<!-- Copyright -->
 	</footer>

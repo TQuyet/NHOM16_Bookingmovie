@@ -23,6 +23,9 @@ date_default_timezone_set('Asia/Kathmandu');
         <div class="d-flex justify-content-around" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="index.php">Trang Chủ</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="pagemovie.php">Phim</a>
                 </li>
                 <li class="nav-item">
