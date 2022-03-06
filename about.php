@@ -66,8 +66,8 @@ if (mysqli_num_rows($s)) { ?>
 <?php
 } else {
 ?>
-    <h3 style="color:#444; font-size:23px;" class="text-center">Currently there are no any shows available!</h3>
-    <p class="text-center">Please check back later!</p>
+    <h3 style="color:#444; font-size:23px;" class="text-center">Hiện chưa có lịch chiếu !</h3>
+    <p class="text-center">Vui lòng quay lại sau !</p>
 <?php
 }
 ?>
