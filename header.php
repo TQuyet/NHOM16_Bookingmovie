@@ -31,16 +31,6 @@ date_default_timezone_set('Asia/Kathmandu');
                 <li class="nav-item">
                     <a class="nav-link" href="#">Ưu đãi </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Chọn rạp
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Hà nội</a></li>
-                        <li><a class="dropdown-item" href="#">TP.Hồ Chí Minh</a></li>
-                        <li><a class="dropdown-item" href="#">Đan phượng</a></li>
-                    </ul>
-                </li>
             </ul>
         </div>
         <div class="d-flex justify-content-end">
