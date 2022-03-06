@@ -10,8 +10,8 @@ $movie = mysqli_fetch_array($qry2);
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title"><?php echo $movie['movie_name']; ?></h5>
-                <p class="p-link" style="font-size:15px"><b>Cast : </b><?php echo $movie['cast']; ?></p>
-                <p class="p-link" style="font-size:15px"><b>Release Date : </b><?php echo date('d-M-Y', strtotime($movie['release_date'])); ?></p>
+                <p class="p-link" style="font-size:15px"><b>Diễn viên : </b><?php echo $movie['cast']; ?></p>
+                <p class="p-link" style="font-size:15px"><b>Ngày chiếu : </b><?php echo date('d-M-Y', strtotime($movie['release_date'])); ?></p>
                 <p style="font-size:15px"><?php echo $movie['desc']; ?></p>
             </div>
         </div>
@@ -29,9 +29,6 @@ if (mysqli_num_rows($s)) { ?>
             </tr>
         </thead>
         <?php
-
-
-
         while ($shw = mysqli_fetch_array($s)) {
 
             $t = mysqli_query($con, "select * from tbl_theatre where id='" . $shw['theatre_id'] . "'");
@@ -66,8 +63,8 @@ if (mysqli_num_rows($s)) { ?>
 <?php
 } else {
 ?>
-    <h3 style="color:#444; font-size:23px;" class="text-center">Hiện chưa có lịch chiếu !</h3>
-    <p class="text-center">Vui lòng quay lại sau !</p>
+    <h3 style="color:#444; font-size:23px;" class="text-center">Tạm thời không có lịch chiếu!</h3>
+    <p class="text-center">Vui lòng quay lại sau</p>
 <?php
 }
 ?>

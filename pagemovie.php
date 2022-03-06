@@ -15,7 +15,7 @@ include('header.php');
                 <h5 class="card-title"><a href="about.php?id=<?php echo $m['movie_id']; ?>" style="text-decoration:none;"><?php echo $m['movie_name']; ?></a></h5>
                 Diễn viên : <p class="card-text"><?php echo $m['cast']; ?>
                 </p>
-                <a href="about.php?id=<?php echo $m['movie_id']; ?>" src="<?php echo $m['image']; ?>" class="btn btn-primary">Mua vé</a>
+                <a class="btn btn-primary" href="about.php?id=<?php echo $m['movie_id']; ?>" src="<?php echo $m['image']; ?>">Mua vé</a>
             </div>
         </div>
 
