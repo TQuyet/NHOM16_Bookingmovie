@@ -20,6 +20,6 @@ if (mysqli_num_rows($qry)) {
 		header('location:admin_movie.php');
 	}
 } else {
-	$_SESSION['error'] = "Login Failed!";
+	$_SESSION['error'] = "Sai tài khoản hoặc mật khẩu!";
 	header("location:login.php");
 }
