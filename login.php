@@ -20,7 +20,7 @@
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Đăng nhập</button>
 
-                <p class="login-box-msg" style="padding-top:20px">Chưa có tài khoản ? <a href="registration.php">Đăng kí</a></p>
+                <p class="login-box-msg" style="padding-top:20px">Chưa có tài khoản ? <a href="Signup.php">Đăng kí</a></p>
               </div>
           </div>
         </div>
