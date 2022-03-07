@@ -1,13 +1,15 @@
 <?php
 // Xử lý giá trị GỬI TỚI
+if (isset($_POST['luulai'])) {
+    $idphim = $_POST['txtidphim'];
+    $idrap = $_POST['txtidrap'];
+    $tenphim = $_POST['txttenphim'];
+    $dienvien = $_POST['txtdienvien'];
+    $tomtat = $_POST['txttomtat'];
+    $ngaychieu = $_POST['txtngaychieu'];
+    $hinhanh = $_POST['txthinhanh'];
+}
 
-$idphim = $_POST['txtidphim'];
-$idrap = $_POST['txtidrap'];
-$tenphim = $_POST['txttenphim'];
-$dienvien = $_POST['txtdienvien'];
-$tomtat = $_POST['txttomtat'];
-$ngaychieu = $_POST['txtngaychieu'];
-$hinhanh = $_POST['txthinhanh'];
 
 // Bước 01: Kết nối Database Server
 $conn = mysqli_connect('localhost', 'root', '', 'bookingmovie');
