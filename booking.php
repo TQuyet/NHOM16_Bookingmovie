@@ -30,22 +30,18 @@ $movie = mysqli_fetch_array($qry2);
 			</td>
 		</tr>
 		<tr>
-			<td>
-				Màn hình
-			</td>
-			<td>
-				<?php
-				$ttm = mysqli_query($con, "select  * from tbl_show_time where st_id='" . $shw['st_id'] . "'");
 
-				$ttme = mysqli_fetch_array($ttm);
+			<?php
+			$ttm = mysqli_query($con, "select  * from tbl_show_time where st_id='" . $shw['st_id'] . "'");
 
-				$sn = mysqli_query($con, "select  * from tbl_screens where screen_id='" . $ttme['screen_id'] . "'");
+			$ttme = mysqli_fetch_array($ttm);
 
-				$screen = mysqli_fetch_array($sn);
-				echo $screen['screen_name'];
+			$sn = mysqli_query($con, "select  * from tbl_screens where screen_id='" . $ttme['screen_id'] . "'");
 
-				?>
-			</td>
+			$screen = mysqli_fetch_array($sn);
+
+			?>
+
 		</tr>
 		<tr>
 			<td>
@@ -80,7 +76,7 @@ $movie = mysqli_fetch_array($qry2);
 				Giờ chiếu
 			</td>
 			<td>
-				<?php echo date('h:i A', strtotime($ttme['start_time'])) . " " . $ttme['name']; ?> Show
+				<?php echo date('h:i A', strtotime($ttme['start_time'])); ?>
 			</td>
 		</tr>
 		<tr>

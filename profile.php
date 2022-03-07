@@ -2,8 +2,6 @@
 if (!isset($_SESSION['user'])) {
 	header('location:login.php');
 }
-$qry2 = mysqli_query($con, "select * from tbl_movie where movie_id='" . $_SESSION['movie'] . "'");
-$movie = mysqli_fetch_array($qry2);
 ?>
 <div class="content">
 	<div class="wrap">
@@ -20,9 +18,8 @@ $movie = mysqli_fetch_array($qry2);
 							<thead>
 								<th>Vé</th>
 								<th>Phim</th>
+								<th>Ngày chiếu</th>
 								<th>Tên rạp</th>
-								<th>Màn hình</th>
-								<th>Tên phim</th>
 								<th>Ghế</th>
 								<th>Thành tiền</th>
 								<th></th>
@@ -32,8 +29,6 @@ $movie = mysqli_fetch_array($qry2);
 								while ($bkg = mysqli_fetch_array($bk)) {
 									$m = mysqli_query($con, "select * from tbl_movie where movie_id=(select movie_id from tbl_shows where s_id='" . $bkg['show_id'] . "')");
 									$mov = mysqli_fetch_array($m);
-									$s = mysqli_query($con, "select * from tbl_screens where screen_id='" . $bkg['screen_id'] . "'");
-									$srn = mysqli_fetch_array($s);
 									$tt = mysqli_query($con, "select * from tbl_theatre where id='" . $bkg['t_id'] . "'");
 									$thr = mysqli_fetch_array($tt);
 									$st = mysqli_query($con, "select * from tbl_show_time where st_id=(select st_id from tbl_shows where s_id='" . $bkg['show_id'] . "')");
@@ -47,19 +42,16 @@ $movie = mysqli_fetch_array($qry2);
 											<?php echo $mov['movie_name']; ?>
 										</td>
 										<td>
+											<?php echo $bkg['ticket_date']; ?>
+										</td>
+										<td>
 											<?php echo $thr['name']; ?>
-										</td>
-										<td>
-											<?php echo $srn['screen_name']; ?>
-										</td>
-										<td>
-											<?php echo $stm['name']; ?>
 										</td>
 										<td>
 											<?php echo $bkg['no_seats']; ?>
 										</td>
 										<td>
-											Rs. <?php echo $bkg['amount']; ?>
+											<?php echo $bkg['amount']; ?> VND
 										</td>
 										<td>
 											<?php if ($bkg['ticket_date'] < date('Y-m-d')) {
@@ -81,8 +73,7 @@ $movie = mysqli_fetch_array($qry2);
 					<?php
 					} else {
 					?>
-						<h3 style="color:red;" class="text-center">No Previous Bookings Found!</h3>
-						<p>Once you start booking movie tickets with this account, you'll be able to see all the booking history.</p>
+						<h3 style="color:red;" class="text-center">Không có vé nào được tìm thấy!</h3>
 					<?php
 					}
 					?>
