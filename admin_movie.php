@@ -25,7 +25,7 @@ session_start();
                     <a class="nav-link" href="admin_movie.php">Thêm phim</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="view_user.php">Quản lý thành viên</a>
+                    <a class="nav-link" aria-current="page" href="view_user.php">Danh sách thành viên</a>
                 </li>
             </ul>
         </div>
@@ -34,42 +34,45 @@ session_start();
         </div>
     </div>
 </nav>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">username</th>
-            <th scope="col">password</th>
-            <th scope="col">user type</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Vùng này là Dữ liệu cần lặp lại hiển thị từ CSDL -->
-        <?php
-        // Bước 01: Kết nối Database Server
-        $conn = mysqli_connect('localhost', 'root', '', 'bookingmovie');
-        if (!$conn) {
-            die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
-        }
-        // Bước 02: Thực hiện truy vấn
-        $sql = "SELECT * FROM tbl_login";
-        $result = mysqli_query($conn, $sql);
-        // Bước 03: Xử lý kết quả truy vấn
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-                <tr>
-                    <th scope="row"><?php echo $row['id']; ?></th>
-                    <td><?php echo $row['username']; ?></td>
-                    <td><?php echo $row['password']; ?></td>
-                    <td><?php echo $row['user_type']; ?></td>
+<main>
+    <div class="container">
+        <h2 class="text-center text-primary mt-5">Thêm bộ phim mới</h2>
+        <!-- Form thêm Dữ liệu nhân viên -->
+        <form action="process-add-employee.php" method="post">
+            <div class="form-group">
+                <label for="txtidphim">Id Phim</label>
+                <input type="text" class="form-control" id="txtidphim" name="txtidphim" placeholder="">
+            </div>
 
-                </tr>
-        <?php
-            }
-        }
-        ?>
+            <div class="form-group">
+                <label for="txtidrap">Id Rạp</label>
+                <input type="text" class="form-control" id="txtidrap" name="txtidrap" placeholder="">
+            </div>
 
+            <div class="form-group">
+                <label for="txttenphim">Tên phim</label>
+                <input type="text" class="form-control" id="txttenphim" name="txttenphim" placeholder="">
 
-    </tbody>
-</table>
+            </div>
+            <div class="form-group">
+                <label for="txtdienvien">Diễn viên</label>
+                <input type="text" class="form-control" id="txtdienvien" name="txtdienvien" placeholder="">
+
+            </div>
+            <div class="form-group">
+                <label for="txttomtat">Tóm tắt</label>
+                <input type="text" class="form-control" id="txttomtat" name="txttomtat" placeholder="">
+
+            </div>
+            <div class="form-group">
+                <label for="txttomtat">Ngày Chiếu (y-m-d)</label>
+                <input type="text" class="form-control" id="txtngaychieu" name="txtngaychieu" placeholder="">
+
+            </div>
+            <div class="form-group">
+                <label for="txthinhanh">Hình ảnh phim</label>
+                <input type="text" class="form-control" id="txthinhanh" name="txthinhanh" placeholder="">
+                <a href="process-add-movie.php" type="submit" class="btn btn-primary mt-3">Lưu lại</a>
+        </form>
+    </div>
+</main>
