@@ -1,14 +1,11 @@
-<?php
-      
+<?php     
     $conn = mysqli_connect('localhost', 'root', '', 'bookingmovie');
     if(!$conn){
         die("Kết nối thất bại");
     }
 
-
     if (isset($_POST['btnsignup'])) {
 
-        $user = $_POST['username'];
         $email = $_POST['email'];
         $pass1 = $_POST['password1'];
         $pass2 = $_POST['password2'];
@@ -18,15 +15,14 @@
     }
     $sql01 = "SELECT * FROM tbl_login WHERE username = '$email'";
 
-
     $result01 = mysqli_query($conn,$sql01);
     if(mysqli_num_rows($result01) > 0){
         $error = "Email đã tồn tại";
-        header("location: signup.php?error=$error");
+        header("location: Signup.php?error=$error");
         }
         if($pass1 != $pass2){
             $error = "Đăng ký không thành công!";
-            header("location: signup.php?error=$error");;
+            header("location: Signup.php?error=$error");;
         }
         else{
         $pass_md5 = md5($pass1);
