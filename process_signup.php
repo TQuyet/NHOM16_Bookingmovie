@@ -15,18 +15,26 @@ if (isset($_POST['btnsignup'])) {
     }
     $sql01 = "SELECT * FROM tbl_login WHERE username = '$email'";
 
+    $data = $_POST;
+    if (
+        empty($data['email']) ||
+        empty($data['password1']) ||
+        empty($data['password2'])
+    ) {
+
+        die('Hãy điền đầy đủ thông tin vào chỗ trống !!');
+    }
+
+    if ($data['password1'] !== $data['password2']) {
+        die('Mật khẩu không trùng khớp !!');
+    }
+
     $result01 = mysqli_query($conn, $sql01);
     if (mysqli_num_rows($result01) > 0) {
         $error = "Email đã tồn tại";
         header("location: Signup.php?error=$error");
-    }
-    if ($pass1 != $pass2) {
-        $error = "Đăng ký không thành công!";
-        header("location: Signup.php?error=$error");;
     } else {
-        $pass_md5 = md5($pass1);
-        $pass_hash = password_hash($pass1, PASSWORD_DEFAULT);
-        $sql02 = "INSERT INTO tbl_login (username, password) VALUES('$email', '$pass_hash')";
+        $sql02 = "INSERT INTO tbl_login (username, password) VALUES('$email', '$pass1')";
         $result02 = mysqli_query($conn, $sql02);
 
         if ($result02 == true) {

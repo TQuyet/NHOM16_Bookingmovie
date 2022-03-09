@@ -14,16 +14,11 @@ if (isset($_POST['btnluulai'])) {
 
     $sql = "INSERT INTO tbl_movie (movie_id, t_id, movie_name, cast, desc, release_date, image) VALUES ('$idphim','$idrap','$tenphim','$dienvien','$tomtat','$ngaychieu', '$hinhanh')";
 
-    $ketqua = mysqli_query($conn, $sql);
-
-    if (!$ketqua) {
+    if (!$conn) {
         header("location: error.php");
     } else {
         header("location: admin_movie.php");
     }
-
-
-
 
     // Bước 03: Đóng kết nối
     mysqli_close($conn);
