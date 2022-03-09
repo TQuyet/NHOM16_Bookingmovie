@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '', 'bookingmovie');
+$conn = mysqli_connect('localhost', 'root', '', 'bookingmovie1');
 if (!$conn) {
     die("Kết nối thất bại");
 }
@@ -12,13 +12,16 @@ if (isset($_POST['btnluulai'])) {
     $ngaychieu = $_POST['txtngaychieu'];
     $hinhanh = $_POST['txthinhanh'];
 
-    $sql = "INSERT INTO tbl_movie (movie_id, t_id, movie_name, cast, desc, release_date, image) VALUES ('$idphim','$idrap','$tenphim','$dienvien','$tomtat','$ngaychieu', '$hinhanh')";
+    $sql = "INSERT INTO tbl_movie VALUES ('$idphim','$idrap','$tenphim','$dienvien','$tomtat','$ngaychieu', '$hinhanh')";
 
-    if (!$conn) {
-        header("location: error.php");
+    $ketqua = mysqli_query($conn, $sql);
+
+    if (!$ketqua) {
+        header("location: error.php"); //Chuyển hướng lỗi
     } else {
-        header("location: admin_movie.php");
+        echo "them phim thanh cong !"; //Chuyển hướng lại Trang Quản trị
     }
+
 
     // Bước 03: Đóng kết nối
     mysqli_close($conn);

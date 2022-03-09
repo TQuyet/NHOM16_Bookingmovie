@@ -86,7 +86,7 @@ $movie = mysqli_fetch_array($qry2);
 			<td>
 				<form action="process_booking.php" method="post">
 					<input type="hidden" name="screen" value="<?php echo $screen['screen_id']; ?>" />
-					<input type="number" required tile="Number of Seats" max="<?php echo $screen['seats'] - $avl[0]; ?>" min="0" name="seats" class="form-control" value="1" style="text-align:center" id="seats" />
+					<input type="number" name="number" required min="1" max="5">
 					<input type="hidden" name="amount" id="hm" value="<?php echo $screen['charge']; ?>" />
 					<input type="hidden" name="date" value="<?php echo $date; ?>" />
 			</td>
@@ -96,30 +96,13 @@ $movie = mysqli_fetch_array($qry2);
 				Thành tiền
 			</td>
 			<td id="amount" style="font-weight:bold;font-size:18px">
-				<?php echo $screen['charge']; ?> VND
+				<?php echo $screen['charge']; ?> VND/1ve
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2"><?php if ($avl[0] == $screen['seats']) { ?><button type="button" class="btn btn-danger" style="width:100%">House Full</button><?php } else { ?>
-					<button class="btn btn-info" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:50%">Đặt ngay</button>
+					<button name="datve" class="btn btn-info" style="width:50%">Đặt vé</button>
 					<!-- Modal -->
-					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>
-								<div class="modal-body">
-									...
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-									<button type="button" class="btn btn-primary">Save changes</button>
-								</div>
-							</div>
-						</div>
-					</div>
 				<?php } ?>
 				</form>
 			</td>
@@ -131,11 +114,3 @@ $movie = mysqli_fetch_array($qry2);
 		</table>
 
 </div>
-<script type="text/javascript">
-	$('#seats').change(function() {
-		var charge = <?php echo $screen['charge']; ?>;
-		amount = charge * $(this).val();
-		$('#amount').html(amount + "VND");
-		$('#hm').val(amount);
-	});
-</script>
