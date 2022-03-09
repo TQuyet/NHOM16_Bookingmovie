@@ -1,7 +1,3 @@
-<?php
-include('config.php');
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,42 +34,41 @@ session_start();
     <div class="container">
         <h2 class="text-center text-primary mt-5">Thêm bộ phim mới</h2>
         <!-- Form thêm Dữ liệu nhân viên -->
-        <form action="process-add-employee.php" method="post">
+        <form action="process-add-movie.php" method="post">
             <div class="form-group">
                 <label for="txtidphim">Id Phim</label>
-                <input type="textarea" class="form-control" id="txtidphim" name="txtidphim" placeholder="">
+                <input type="text" class="form-control" id="txtidphim" name="txtidphim" placeholder="">
             </div>
 
             <div class="form-group">
                 <label for="txtidrap">Id Rạp</label>
-                <input type="textarea" class="form-control" id="txtidrap" name="txtidrap" placeholder="">
+                <input type="text" class="form-control" id="txtidrap" name="txtidrap" placeholder="">
             </div>
 
             <div class="form-group">
                 <label for="txttenphim">Tên phim</label>
-                <input type="textarea" class="form-control" id="txttenphim" name="txttenphim" placeholder="">
+                <input type="text" class="form-control" id="txttenphim" name="txttenphim" placeholder="">
 
             </div>
             <div class="form-group">
                 <label for="txtdienvien">Diễn viên</label>
-                <input type="textarea" class="form-control" id="txtdienvien" name="txtdienvien" placeholder="">
+                <input type="text" class="form-control" id="txtdienvien" name="txtdienvien" placeholder="">
 
             </div>
             <div class="form-group">
                 <label for="txttomtat">Tóm tắt</label>
-                <input type="textarea" class="form-control" id="txttomtat" name="txttomtat" placeholder="">
+                <input type="text" class="form-control" id="txttomtat" name="txttomtat" placeholder="">
 
             </div>
             <div class="form-group">
                 <label for="txttomtat">Ngày Chiếu (y-m-d)</label>
-                <input type="textarea" class="form-control" id="txtngaychieu" name="txtngaychieu" placeholder="">
+                <input type="text" class="form-control" id="txtngaychieu" name="txtngaychieu" placeholder="">
 
             </div>
             <div class="form-group">
                 <label for="txthinhanh">Hình ảnh phim</label>
-                <input type="textarea" class="form-control" id="txthinhanh" name="txthinhanh" placeholder="">
-                <a href="process-add-movie.php" type="submit" name="luulai" class="btn btn-primary mt-3">Lưu lại</a>
-
+                <input type="text" class="form-control" id="txthinhanh" name="txthinhanh" placeholder="">
+                <button type="submit" name="btnluulai" class="btn btn-primary" value="luu lai">luu lai</button>
         </form>
     </div>
 </main>
