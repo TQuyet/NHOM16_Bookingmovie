@@ -15,7 +15,7 @@ session_start();
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <img href = "index.php" class="navbar-brand" src="https://www.betacinemas.vn/Assets/Common/logo/logo.png"></img>
+        <img href="index.php" class="navbar-brand" src="https://www.betacinemas.vn/Assets/Common/logo/logo.png"></img>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,8 +34,8 @@ session_start();
         </div>
         <div class="d-flex justify-content-end">
             <?php if (isset($_SESSION['user'])) {
-                $us = mysqli_query($con, "select * from tbl_registration where user_id='" . $_SESSION['user'] . "'");
-                $user = mysqli_fetch_array($us); ?><a href="profile.php"><?php echo $user['name']; ?></a><a href="logout.php" style="padding-left:10px">Đăng Xuất</a><?php } else { ?><a href="login.php">Đăng Nhập</a><?php } ?>
+                $us = mysqli_query($con, "select * from tbl_login where user_id='" . $_SESSION['user'] . "'");
+                $user = mysqli_fetch_array($us); ?><a href="profile.php"><?php echo $user['username']; ?></a><a href="logout.php" style="padding-left:10px">Đăng Xuất</a><?php } else { ?><a href="login.php">Đăng Nhập</a><?php } ?>
         </div>
     </div>
 </nav>
