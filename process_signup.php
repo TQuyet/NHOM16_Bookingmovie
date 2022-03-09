@@ -1,5 +1,8 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '', 'bookingmovie');
+
+use function PHPSTORM_META\type;
+
+$conn = mysqli_connect('localhost', 'root', '', 'bookingmovie1');
 if (!$conn) {
     die("Kết nối thất bại");
 }
@@ -27,23 +30,17 @@ if (isset($_POST['btnsignup'])) {
 
     if ($data['password1'] !== $data['password2']) {
         die('Mật khẩu không trùng khớp !!');
-    }
 
-    $result01 = mysqli_query($conn, $sql01);
-    if (mysqli_num_rows($result01) > 0) {
-        $error = "Email đã tồn tại";
-        header("location: Signup.php?error=$error");
     } else {
         $sql02 = "INSERT INTO tbl_login (username, password) VALUES('$email', '$pass1')";
         $result02 = mysqli_query($conn, $sql02);
-
         if ($result02 == true) {
             header("location:login.php");
         } else {
             $error = "Không thể đăng kí được tài khoản.";
             header("location: Signup.php?error=$error");
         }
-    }
 
-    mysqli_close($conn);
+        mysqli_close($conn);
+    }
 }

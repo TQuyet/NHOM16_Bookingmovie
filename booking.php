@@ -96,7 +96,7 @@ $movie = mysqli_fetch_array($qry2);
 				Thành tiền
 			</td>
 			<td id="amount" style="font-weight:bold;font-size:18px">
-				<?php echo $screen['charge']; ?> VND/1ve
+				<?php echo $screen['charge']; ?> VND/1 vé
 			</td>
 		</tr>
 		<tr>

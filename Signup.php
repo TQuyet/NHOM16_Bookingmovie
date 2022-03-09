@@ -6,8 +6,9 @@
         <div class="panel panel-default">
           <div class="mb-3" style="text-align:center; font-size:30px">Đăng kí</div>
           <div class="panel-body">
-            <?php include('msgbox.php');?>
+            <?php include('msgbox.php'); ?>
             <html lang="en">
+
             <head>
               <meta charset="UTF-8">
               <title>Sign Up</title>
@@ -16,12 +17,14 @@
                 body {
                   font: 14px sans-serif;
                 }
+
                 .wrapper {
                   width: 360px;
                   padding: 20px;
                 }
               </style>
             </head>
+
             <body>
               <div class="wrapper">
                 <form action="process_signup.php" method="post">
@@ -48,6 +51,7 @@
                 </form>
               </div>
             </body>
+
             </html>
           </div>
         </div>
