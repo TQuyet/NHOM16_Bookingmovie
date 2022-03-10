@@ -16,14 +16,17 @@ if (isset($_POST['datve'])) {
     $noseat = $_POST['number'];
     $giave = $_POST['amount'];
     $ngaychieu = $_POST['date'];
+    $no = $_POST['number'];
+    $final = $giave * $no;
 
-    $sql = "INSERT INTO tbl_bookings VALUES ( NULL,'$ticketid','" . $_SESSION['theatre'] . "','" . $_SESSION['user'] . "','" . $_SESSION['show'] . "','$screenid', '$noseat','$giave', '$ngaychieu')";
+    $sql = "INSERT INTO tbl_bookings VALUES ( NULL,'$ticketid','" . $_SESSION['theatre'] . "','" . $_SESSION['user'] . "','" . $_SESSION['show'] . "','$screenid', '$noseat','$final', '$ngaychieu')";
     $ketqua = mysqli_query($conn, $sql);
 
     if (!$ketqua) {
+
         header("location: error.php"); //Chuyển hướng lỗi
     } else {
-        echo "datve thanh cong !"; //Chuyển hướng lại Trang Quản trị
+        echo "DAT VE THANH CONG! Tong tien cua ban la $final"; //Chuyển hướng lại Trang Quản trị
     }
 
 
