@@ -8,7 +8,7 @@ if (!$conn) {
 }
 
 if (isset($_POST['btnsignup'])) {
-
+    $userid = rand(10, 10000);
     $email = $_POST['email'];
     $pass1 = $_POST['password1'];
     $pass2 = $_POST['password2'];
@@ -30,9 +30,8 @@ if (isset($_POST['btnsignup'])) {
 
     if ($data['password1'] !== $data['password2']) {
         die('Mật khẩu không trùng khớp !!');
-
     } else {
-        $sql02 = "INSERT INTO tbl_login (username, password) VALUES('$email', '$pass1')";
+        $sql02 = "INSERT INTO tbl_login (user_id,username, password,user_type) VALUES('$userid','$email', '$pass1',1)";
         $result02 = mysqli_query($conn, $sql02);
         if ($result02 == true) {
             header("location:login.php");

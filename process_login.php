@@ -7,7 +7,7 @@ $qry = mysqli_query($con, "select * from tbl_login where username='$email' and p
 if (mysqli_num_rows($qry)) {
 	$usr = mysqli_fetch_array($qry);
 
-	if ($usr['user_type'] == 0) {
+	if ($usr['user_type'] == 1) {
 		$_SESSION['user'] = $usr['user_id'];
 		if (isset($_SESSION['show'])) {
 			header('location:booking.php');
@@ -15,7 +15,7 @@ if (mysqli_num_rows($qry)) {
 			header('location:index.php');
 		}
 	}
-	if ($usr['user_type'] == 1) {
+	if ($usr['user_type'] == 0) {
 
 		header('location:admin_movie.php');
 	}
