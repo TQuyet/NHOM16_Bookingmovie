@@ -44,9 +44,9 @@ CREATE TABLE `tbl_login` (
 
 
 INSERT INTO `tbl_login` (`id`, `user_id`, `username`, `password`, `user_type`) VALUES
-(1, 0, 'admin', 'password', 1),
-(2, 4, 'quyet', 'password', 0),
-(3, 2, 'quyet1', 'password', 0);
+(1, 0, 'admin', 'password', 0),
+(2, 4, 'quyet', 'password', 1),
+(3, 2, 'quyet1', 'password', 1);
 
 
 CREATE TABLE `tbl_movie` (
