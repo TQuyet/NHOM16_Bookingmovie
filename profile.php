@@ -18,7 +18,7 @@ if (!isset($_SESSION['user'])) {
 							<thead>
 								<th>Vé</th>
 								<th>Phim</th>
-								<th>Ngày chiếu</th>
+								<th>Ngày đặt vé</th>
 								<th>Tên rạp</th>
 								<th>Ghế</th>
 								<th>Thành tiền</th>
@@ -52,17 +52,6 @@ if (!isset($_SESSION['user'])) {
 										</td>
 										<td>
 											<?php echo $bkg['amount']; ?> VND
-										</td>
-										<td>
-											<?php if ($bkg['ticket_date'] < date('Y-m-d')) {
-											?>
-												<i class="glyphicon glyphicon-ok"></i>
-											<?php
-											} else { ?>
-												<a href="cancel.php?id=<?php echo $bkg['book_id']; ?>" style="text-decoration:none; color:red;">Cancel</a>
-											<?php
-											}
-											?>
 										</td>
 									</tr>
 								<?php
