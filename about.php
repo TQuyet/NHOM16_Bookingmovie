@@ -11,7 +11,7 @@ $movie = mysqli_fetch_array($qry2);
             <div class="card-body">
                 <h5 class="card-title"><?php echo $movie['movie_name']; ?></h5>
                 <p class="p-link" style="font-size:15px"><b>Diễn viên : </b><?php echo $movie['cast']; ?></p>
-                <p class="p-link" style="font-size:15px"><b>Ngày chiếu : </b><?php echo date('d-M-Y', strtotime($movie['release_date'])); ?></p>
+                <p class="p-link" style="font-size:15px"><b>Ngày chiếu : </b><?php echo $movie['release_date']; ?></p>
                 <p style="font-size:15px"><?php echo $movie['desc']; ?></p>
             </div>
         </div>

@@ -4,7 +4,6 @@ include('header.php');
 ?>
 <div class="d-flex justify-content-around">
     <?php
-    $today = date("Y-m-d");
     $qry2 = mysqli_query($con, "select * from  tbl_movie ");
 
     while ($m = mysqli_fetch_array($qry2)) {

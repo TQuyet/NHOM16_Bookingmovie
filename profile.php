@@ -18,8 +18,10 @@ if (!isset($_SESSION['user'])) {
 							<thead>
 								<th>Vé</th>
 								<th>Phim</th>
+								<th>Ngày chiếu:</th>
 								<th>Ngày đặt vé</th>
 								<th>Tên rạp</th>
+								<th>thời gian</th>
 								<th>Ghế</th>
 								<th>Thành tiền</th>
 								<th></th>
@@ -42,10 +44,16 @@ if (!isset($_SESSION['user'])) {
 											<?php echo $mov['movie_name']; ?>
 										</td>
 										<td>
+											<?php echo $mov['release_date']; ?>
+										</td>
+										<td>
 											<?php echo $bkg['ticket_date']; ?>
 										</td>
 										<td>
 											<?php echo $thr['name']; ?>
+										</td>
+										<td>
+											<?php echo $stm['start_time']; ?>
 										</td>
 										<td>
 											<?php echo $bkg['no_seats']; ?>
@@ -72,11 +80,3 @@ if (!isset($_SESSION['user'])) {
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	$('#seats').change(function() {
-		var charge = <?php echo $screen['charge']; ?>;
-		amount = charge * $(this).val();
-		$('#amount').html("Rs " + amount);
-		$('#hm').val(amount);
-	});
-</script>

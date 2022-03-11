@@ -100,10 +100,9 @@ $movie = mysqli_fetch_array($qry2);
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2"><?php if ($avl[0] == $screen['seats']) { ?><button type="button" class="btn btn-danger" style="width:100%">House Full</button><?php } else { ?>
-					<button name="datve" class="btn btn-info" style="width:50%">Đặt vé</button>
-					<!-- Modal -->
-				<?php } ?>
+			<td colspan="2">
+				<button name="datve" class="btn btn-info" style="width:50%">Đặt vé</button>
+				<!-- Modal -->
 				</form>
 			</td>
 		</tr>
