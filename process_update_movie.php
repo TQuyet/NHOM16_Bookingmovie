@@ -3,7 +3,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'bookingmovie1');
 if (!$conn) {
     die("Kết nối thất bại");
 }
-if (isset($_POST['btnthem'])) {
+if (isset($_POST['btnluulai'])) {
     $idphim = $_POST['txtidphim'];
     $idrap = $_POST['txtidrap'];
     $tenphim = $_POST['txttenphim'];
@@ -12,15 +12,16 @@ if (isset($_POST['btnthem'])) {
     $ngaychieu = $_POST['txtngaychieu'];
     $hinhanh = $_POST['txthinhanh'];
 
-    $sql = "INSERT INTO tbl_movie VALUES ('$idphim','$idrap','$tenphim','$dienvien','$tomtat','$ngaychieu', '$hinhanh')";
+    $sql = "UPDATE btl_movie SET  t_id='$idrap', movie_name = '$tenphim', cast = '$dienvien', desc ='$tomtat', release_date = '$ngaychieu',image ='$hinhanh' WHERE movie_id='$idphim'";
+    echo $sql;
+    // $ketqua = mysqli_query($conn, $sql);
 
-    $ketqua = mysqli_query($conn, $sql);
 
-    if (!$ketqua) {
-        header("location: error.php"); //Chuyển hướng lỗi
-    } else {
-        echo "them phim thanh cong !"; //Chuyển hướng lại Trang Quản trị
-    }
+    // if (!$ketqua) {
+    //     header("location: error.php");
+    // } else {
+    //     echo "them phim thanh cong !";
+    // }
 
 
     // Bước 03: Đóng kết nối

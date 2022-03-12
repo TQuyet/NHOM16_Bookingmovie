@@ -1,3 +1,8 @@
+<?php
+include('config.php');
+$qry2 = mysqli_query($con, "select * from tbl_movie where movie_id='" . $_GET['id'] . "'");
+$movie = mysqli_fetch_array($qry2);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,13 +23,7 @@
         <div class="d-flex justify-content-around" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="admin_movie.php">Thêm phim</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="adminn.php">Quản lý phim</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="view_user.php">Danh sách thành viên</a>
+                    <a class="nav-link" href="adminn.php">Trang Quản lý</a>
                 </li>
             </ul>
         </div>
@@ -35,43 +34,43 @@
 </nav>
 <main>
     <div class="container">
-        <h2 class="text-center text-primary mt-5">Thêm bộ phim mới</h2>
+        <h3 class="text-center text-primary mt-5">Cập nhật Thông Tin Phim ( <?php echo $movie['movie_name']; ?>)</h3>
         <!-- Form thêm Dữ liệu nhân viên -->
-        <form action="process-add-movie.php" method="post">
+        <form action="process_update_movie.php" method="post">
             <div class="form-group">
                 <label for="txtidphim">Id Phim</label>
-                <input type="text" class="form-control" id="txtidphim" name="txtidphim" placeholder="">
+                <input type="text" class="form-control" id="txtidphim" name="txtidphim" placeholder="" value="<?php echo $movie['movie_id']; ?>">
             </div>
 
             <div class="form-group">
                 <label for="txtidrap">Id Rạp</label>
-                <input type="text" class="form-control" id="txtidrap" name="txtidrap" placeholder="">
+                <input type="text" class="form-control" id="txtidrap" name="txtidrap" placeholder="" value="<?php echo $movie['t_id']; ?>">
             </div>
 
             <div class="form-group">
                 <label for="txttenphim">Tên phim</label>
-                <input type="text" class="form-control" id="txttenphim" name="txttenphim" placeholder="">
+                <input type="text" class="form-control" id="txttenphim" name="txttenphim" placeholder="" value="<?php echo $movie['movie_name']; ?>">
 
             </div>
             <div class="form-group">
                 <label for="txtdienvien">Diễn viên</label>
-                <input type="text" class="form-control" id="txtdienvien" name="txtdienvien" placeholder="">
+                <input type="text" class="form-control" id="txtdienvien" name="txtdienvien" placeholder="" value="<?php echo $movie['cast']; ?>">
 
             </div>
             <div class="form-group">
                 <label for="txttomtat">Tóm tắt</label>
-                <input type="text" class="form-control" id="txttomtat" name="txttomtat" placeholder="">
+                <input type="text" class="form-control" id="txttomtat" name="txttomtat" placeholder="" value="<?php echo $movie['desc']; ?>">
 
             </div>
             <div class="form-group">
                 <label for="txttomtat">Ngày Chiếu (y-m-d)</label>
-                <input type="text" class="form-control" id="txtngaychieu" name="txtngaychieu" placeholder="">
+                <input type="text" class="form-control" id="txtngaychieu" name="txtngaychieu" placeholder="" value="<?php echo $movie['release_date']; ?>">
 
             </div>
             <div class="form-group">
                 <label for="txthinhanh">Hình ảnh phim</label>
-                <input type="text" class="form-control" id="txthinhanh" name="txthinhanh" placeholder="">
-                <button type="submit" name="btnthem" class="btn btn-primary" value="luu lai">Thêm Phim mới</button>
+                <input type="text" class="form-control" id="txthinhanh" name="txthinhanh" placeholder="" value="<?php echo $movie['image']; ?>">
+                <button type="submit" name="btnluulai" class="btn btn-primary" value="luu lai">Lưu Lại</button>
         </form>
     </div>
 </main>

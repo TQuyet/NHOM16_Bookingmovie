@@ -1,6 +1,5 @@
 <?php
 include('config.php');
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,42 +36,33 @@ session_start();
         </div>
     </div>
 </nav>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">username</th>
-            <th scope="col">password</th>
-            <th scope="col">user type</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="d-flex justify-content-around">
+    <?php
+    $qry2 = mysqli_query($con, "select * from  tbl_movie ");
 
-        <?php
+    while ($m = mysqli_fetch_array($qry2)) {
+    ?>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" href="about.php?id=<?php echo $m['movie_id']; ?>" src="<?php echo $m['image']; ?>" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><a href="about.php?id=<?php echo $m['movie_id']; ?>" style="text-decoration:none;"><?php echo $m['movie_name']; ?></a></h5>
+                Diễn viên : <p class="card-text"><?php echo $m['cast']; ?>
+                </p>
+                <a class="btn btn-primary" href="update_movie.php?id=<?php echo $m['movie_id']; ?>">Sửa</a>
+                <a class="btn btn-danger" href="process_delete_movie.php?id=<?php echo $m['movie_id']; ?>">Xóa phim</a>
+            </div>
+        </div>
 
-        $conn = mysqli_connect('localhost', 'root', '', 'bookingmovie');
-        if (!$conn) {
-            die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
-        }
-
-        $sql = "SELECT * FROM tbl_login";
-        $result = mysqli_query($conn, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-                <tr>
-                    <th scope="row"><?php echo $row['id']; ?></th>
-                    <td><?php echo $row['username']; ?></td>
-                    <td><?php echo $row['password']; ?></td>
-                    <td><?php echo $row['user_type']; ?></td>
-
-                </tr>
-        <?php
-            }
-        }
-        ?>
+    <?php
+    }
+    ?>
 
 
-    </tbody>
-</table>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+
+</div>
+<!-- End of .container -->
+
+</html>

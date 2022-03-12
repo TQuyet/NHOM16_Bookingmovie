@@ -17,7 +17,7 @@ if (mysqli_num_rows($qry)) {
 	}
 	if ($usr['user_type'] == 0) {
 
-		header('location:admin_movie.php');
+		header('location:adminn.php');
 	}
 } else {
 	$_SESSION['error'] = "Sai tài khoản hoặc mật khẩu!";
