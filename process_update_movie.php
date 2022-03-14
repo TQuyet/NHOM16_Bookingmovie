@@ -1,29 +1,26 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '', 'bookingmovie1');
-if (!$conn) {
+include('config.php');
+if (!$con) {
     die("Kết nối thất bại");
 }
 if (isset($_POST['btnluulai'])) {
-    $idphim = $_POST['txtidphim'];
-    $idrap = $_POST['txtidrap'];
-    $tenphim = $_POST['txttenphim'];
-    $dienvien = $_POST['txtdienvien'];
-    $tomtat = $_POST['txttomtat'];
-    $ngaychieu = $_POST['txtngaychieu'];
-    $hinhanh = $_POST['txthinhanh'];
+    $idphim = $_POST['idphim'];
+    $idrap = $_POST['idrap'];
+    $tenphim = $_POST['tenphim'];
+    $dienvien = $_POST['dienvien'];
+    $tomtat = $_POST['tomtat'];
+    $ngaychieu = $_POST['ngaychieu'];
+    $hinhanh = $_POST['hinhanh'];
 
-    $sql = "UPDATE btl_movie SET  t_id='$idrap', movie_name = '$tenphim', cast = '$dienvien', desc ='$tomtat', release_date = '$ngaychieu',image ='$hinhanh' WHERE movie_id='$idphim'";
-    echo $sql;
-    // $ketqua = mysqli_query($conn, $sql);
-
-
-    // if (!$ketqua) {
-    //     header("location: error.php");
-    // } else {
-    //     echo "them phim thanh cong !";
-    // }
+    $sql = "UPDATE tbl_movie SET t_id='$idrap', movie_name = '$tenphim', cast = '$dienvien', `desc`= '$tomtat', release_date = '$ngaychieu',image ='$hinhanh' WHERE movie_id='$idphim'";
+    $ketqua = mysqli_query($con, $sql);
+    if (!$ketqua) {
+        header("location: error.php");
+    } else {
+        echo "Cập nhật phim thành công!";
+    }
 
 
-    // Bước 03: Đóng kết nối
-    mysqli_close($conn);
+
+    mysqli_close($con);
 }

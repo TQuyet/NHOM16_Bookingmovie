@@ -39,37 +39,37 @@ $movie = mysqli_fetch_array($qry2);
         <form action="process_update_movie.php" method="post">
             <div class="form-group">
                 <label for="txtidphim">Id Phim</label>
-                <input type="text" class="form-control" id="txtidphim" name="txtidphim" placeholder="" value="<?php echo $movie['movie_id']; ?>">
+                <input type="text" class="form-control" id="txtidphim" name="idphim" placeholder="" value="<?php echo $movie['movie_id']; ?>">
             </div>
 
             <div class="form-group">
                 <label for="txtidrap">Id Rạp</label>
-                <input type="text" class="form-control" id="txtidrap" name="txtidrap" placeholder="" value="<?php echo $movie['t_id']; ?>">
+                <input type="text" class="form-control" id="txtidrap" name="idrap" placeholder="" value="<?php echo $movie['t_id']; ?>">
             </div>
 
             <div class="form-group">
                 <label for="txttenphim">Tên phim</label>
-                <input type="text" class="form-control" id="txttenphim" name="txttenphim" placeholder="" value="<?php echo $movie['movie_name']; ?>">
+                <input type="text" class="form-control" id="txttenphim" name="tenphim" placeholder="" value="<?php echo $movie['movie_name']; ?>">
 
             </div>
             <div class="form-group">
                 <label for="txtdienvien">Diễn viên</label>
-                <input type="text" class="form-control" id="txtdienvien" name="txtdienvien" placeholder="" value="<?php echo $movie['cast']; ?>">
+                <input type="text" class="form-control" id="txtdienvien" name="dienvien" placeholder="" value="<?php echo $movie['cast']; ?>">
 
             </div>
             <div class="form-group">
                 <label for="txttomtat">Tóm tắt</label>
-                <input type="text" class="form-control" id="txttomtat" name="txttomtat" placeholder="" value="<?php echo $movie['desc']; ?>">
+                <input type="text" class="form-control" id="txttomtat" name="tomtat" placeholder="" value="<?php echo $movie['desc']; ?>">
 
             </div>
             <div class="form-group">
-                <label for="txttomtat">Ngày Chiếu (y-m-d)</label>
-                <input type="text" class="form-control" id="txtngaychieu" name="txtngaychieu" placeholder="" value="<?php echo $movie['release_date']; ?>">
+                <label for="txtngaychieu">Ngày Chiếu (y-m-d)</label>
+                <input type="text" class="form-control" id="txtngaychieu" name="ngaychieu" placeholder="" value="<?php echo $movie['release_date']; ?>">
 
             </div>
             <div class="form-group">
                 <label for="txthinhanh">Hình ảnh phim</label>
-                <input type="text" class="form-control" id="txthinhanh" name="txthinhanh" placeholder="" value="<?php echo $movie['image']; ?>">
+                <input type="text" class="form-control" id="txthinhanh" name="hinhanh" placeholder="" value="<?php echo $movie['image']; ?>">
                 <button type="submit" name="btnluulai" class="btn btn-primary" value="luu lai">Lưu Lại</button>
         </form>
     </div>

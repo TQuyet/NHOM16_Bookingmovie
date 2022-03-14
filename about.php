@@ -49,7 +49,7 @@ if (mysqli_num_rows($s)) { ?>
 
                         ?>
 
-                            <a href="check_login.php?show=<?php echo $shh['s_id']; ?>&movie=<?php echo $shh['movie_id']; ?>&theatre=<?php echo $shw['theatre_id']; ?>"><button class="btn btn-default"><?php echo date('h:i A', strtotime($ttme['start_time'])); ?></button></a>
+                            <a href="check_login.php?show=<?php echo $shh['s_id']; ?>&movie=<?php echo $shh['movie_id']; ?>&theatre=<?php echo $shw['theatre_id']; ?>"><button class="btn btn-default"><?php echo $ttme['start_time']; ?></button></a>
                         <?php
                         }
                         ?>

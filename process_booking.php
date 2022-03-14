@@ -24,12 +24,12 @@ if (isset($_POST['datve'])) {
 
     if (!$ketqua) {
 
-        header("location: error.php"); //Chuyển hướng lỗi
+        header("location: error.php");
     } else {
-        echo "DAT VE THANH CONG! Tong tien cua ban la $final"; //Chuyển hướng lại Trang Quản trị
+        echo "DAT VE THANH CONG! Tong tien cua ban la $final";
     }
 
 
-    // Bước 03: Đóng kết nối
+
     mysqli_close($conn);
 }

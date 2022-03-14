@@ -17,12 +17,12 @@ if (isset($_POST['btnthem'])) {
     $ketqua = mysqli_query($conn, $sql);
 
     if (!$ketqua) {
-        header("location: error.php"); //Chuyển hướng lỗi
+        header("location: error.php");
     } else {
-        echo "them phim thanh cong !"; //Chuyển hướng lại Trang Quản trị
+        echo "them phim thanh cong !";
     }
 
 
-    // Bước 03: Đóng kết nối
+
     mysqli_close($conn);
 }
