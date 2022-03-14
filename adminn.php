@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +33,7 @@ include('config.php');
             </ul>
         </div>
         <div class="d-flex justify-content-end">
-            <a href="logout.php"> Đăng Xuất</a>
+            Xin chào Admin <a style="margin-left:10px;color:red" href="logout.php"> Đăng Xuất</a>
         </div>
     </div>
 </nav>

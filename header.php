@@ -35,7 +35,7 @@ session_start();
         <div class="d-flex justify-content-end">
             <?php if (isset($_SESSION['user'])) {
                 $us = mysqli_query($con, "select * from tbl_login where user_id='" . $_SESSION['user'] . "'");
-                $user = mysqli_fetch_array($us); ?><a href="profile.php"><?php echo $user['username']; ?></a><a href="logout.php" style="padding-left:10px">Đăng Xuất</a><?php } else { ?><a href="login.php">Đăng Nhập</a><?php } ?>
+                $user = mysqli_fetch_array($us); ?><a style="text-decoration-line:none" href="profile.php">Xin chào <?php echo $user['username']; ?></a><a href="logout.php" style="padding-left:10px;color:red">Đăng Xuất</a><?php } else { ?><a href="login.php">ĐĂNG NHẬP</a><?php } ?>
         </div>
     </div>
 </nav>

@@ -38,14 +38,35 @@
 </div>
 
 <body>
+	<h3 style="color: green;padding:35px;text-decoration-line: underline;" class="text-center">PHIM ĐANG CHIẾU</h3>
+	<hr>
+	<div class="d-flex justify-content-around">
+		<?php
+		$qry2 = mysqli_query($con, "select * from  tbl_movie ");
+
+		while ($m = mysqli_fetch_array($qry2)) {
+		?>
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" href="about.php?id=<?php echo $m['movie_id']; ?>" src="<?php echo $m['image']; ?>" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title"><a href="about.php?id=<?php echo $m['movie_id']; ?>" style="text-decoration:none;"><?php echo $m['movie_name']; ?></a></h5>
+					Diễn viên : <p class="card-text"><?php echo $m['cast']; ?>
+					</p>
+				</div>
+			</div>
+
+		<?php
+		}
+		?>
+
+	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-<!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:30px">
 
-	<footer class="text-dark text-center text-lg-start bg-white">
+	<footer class="text-dark text-center text-lg-start bg-white ">
 		<!-- Grid container -->
-		<div class="container p-4">
+		<div class="container p-4" style="background-color:rgb(224, 224, 224);">
 			<!--Grid row-->
 			<div class="row mt-4">
 				<!--Grid column-->

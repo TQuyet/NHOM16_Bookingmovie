@@ -29,8 +29,8 @@
               <div class="wrapper">
                 <form action="process_signup.php" method="post">
                   <div class="form-group">
-                    <label>Email</label>
-                    <input type="text" name="email" class="form-control" size="25" placeholder="Email">
+                    <label>Acount</label>
+                    <input type="text" name="email" class="form-control" size="25" placeholder="Tài khoản">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                   </div>
                   <div class="form-group">
