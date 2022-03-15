@@ -16,7 +16,6 @@ if (isset($_POST['btnsignup'])) {
     if (!$conn) {
         die("Kết nối thất bại");
     }
-    $sql01 = "SELECT * FROM tbl_login WHERE username = '$email'";
 
     $data = $_POST;
     if (
@@ -30,6 +29,14 @@ if (isset($_POST['btnsignup'])) {
 
     if ($data['password1'] !== $data['password2']) {
         die('Mật khẩu không trùng khớp !!');
+    }
+
+    $sql01 = "SELECT * FROM tbl_login WHERE username = '$email'";
+    $result = mysqli_query($conn, $sql01);
+    if (mysqli_num_rows($result) > 0)
+    {
+        die('Email đã tồn tại !!');
+
     } else {
         $sql02 = "INSERT INTO tbl_login (user_id,username, password,user_type) VALUES('$userid','$email', '$pass1',1)";
         $result02 = mysqli_query($conn, $sql02);
