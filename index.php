@@ -47,7 +47,7 @@
 		while ($m = mysqli_fetch_array($qry2)) {
 		?>
 			<div class="card" style="width: 18rem;">
-				<img class="card-img-top" href="about.php?id=<?php echo $m['movie_id']; ?>" src="<?php echo $m['image']; ?>" alt="Card image cap">
+				<img class="card-img-top" src="<?php echo $m['image']; ?>" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title"><a href="about.php?id=<?php echo $m['movie_id']; ?>" style="text-decoration:none;"><?php echo $m['movie_name']; ?></a></h5>
 					Diễn viên : <p class="card-text"><?php echo $m['cast']; ?>
