@@ -48,27 +48,7 @@ $movie = mysqli_fetch_array($qry2);
 				Ngày chiếu
 			</td>
 			<td>
-				<?php
-				if (isset($_GET['date'])) {
-					$date = $_GET['date'];
-				} else {
-					if ($shw['start_date'] > date('Y-m-d')) {
-						$date = date('Y-m-d', strtotime($shw['start_date'] . "-1 days"));
-					} else {
-						$date = date('Y-m-d');
-					}
-					$_SESSION['dd'] = $date;
-				}
-				?>
-				<div class="col-md-12 text-center" style="padding-bottom:20px">
-					<?php if ($date > $_SESSION['dd']) { ?><a href="booking.php?date=<?php echo date('Y-m-d', strtotime($date . "-1 days")); ?>"><button class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i></button></a> <?php } ?><span style="cursor:default" class="btn btn-default"><?php echo date('d-M-Y', strtotime($date)); ?></span>
-					<?php if ($date != date('Y-m-d', strtotime($_SESSION['dd'] . "+4 days"))) { ?>
-						<a href="booking.php?date=<?php echo date('Y-m-d', strtotime($date . "+1 days")); ?>"><button class="btn btn-default"><i class="glyphicon glyphicon-chevron-right"></i></button></a>
-					<?php }
-					$av = mysqli_query($con, "select sum(no_seats) from tbl_bookings where show_id='" . $_SESSION['show'] . "' and ticket_date='$date'");
-					$avl = mysqli_fetch_array($av);
-					?>
-				</div>
+				<?php echo date('d-M-Y', strtotime($movie['release_date'])); ?>
 			</td>
 		</tr>
 		<tr>
@@ -76,7 +56,7 @@ $movie = mysqli_fetch_array($qry2);
 				Giờ chiếu
 			</td>
 			<td>
-				<?php echo date('h:i A', strtotime($ttme['start_time'])); ?>
+				<?php echo (($ttme['start_time'])); ?>
 			</td>
 		</tr>
 		<tr>
@@ -88,7 +68,7 @@ $movie = mysqli_fetch_array($qry2);
 					<input type="hidden" name="screen" value="<?php echo $screen['screen_id']; ?>" />
 					<input type="number" name="number" required min="1" max="5">
 					<input type="hidden" name="amount" id="hm" value="<?php echo $screen['charge']; ?>" />
-					<input type="hidden" name="date" value="<?php echo $date; ?>" />
+					<input type="hidden" name="date" value="<?php echo $date = date('Y-m-d'); ?>" />
 			</td>
 		</tr>
 		<tr>
