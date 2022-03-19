@@ -28,6 +28,9 @@ session_start();
                     <a class="nav-link" href="adminn.php">Quản lý phim</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="admin_event.php">Thêm ưu đãi</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="view_user.php">Danh sách thành viên</a>
                 </li>
             </ul>

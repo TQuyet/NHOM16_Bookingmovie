@@ -11,7 +11,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Nhom16</title>
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,41 +36,39 @@ session_start();
             </ul>
         </div>
         <div class="d-flex justify-content-end">
-            Xin chào Admin <a style="margin-left:10px;color:red" href="logout.php"> Đăng Xuất</a>
+            <a href="logout.php"> Đăng Xuất</a>
         </div>
     </div>
 </nav>
-<div class="d-flex justify-content-around">
-    <?php
-    $qry2 = mysqli_query($con, "select * from  tbl_movie ");
-
-    while ($m = mysqli_fetch_array($qry2)) {
-    ?>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" href="about.php?id=<?php echo $m['movie_id']; ?>" src="<?php echo $m['image']; ?>" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title"><a href="about.php?id=<?php echo $m['movie_id']; ?>" style="text-decoration:none;"><?php echo $m['movie_name']; ?></a></h5>
-                Diễn viên : <p class="card-text"><?php echo $m['cast']; ?>
-                </p>
-                <a class="btn btn-primary" href="update_movie.php?id=<?php echo $m['movie_id']; ?>">Sửa</a>
-                <a id="delete" class="btn btn-danger" href="process_delete_movie.php?id=<?php echo $m['movie_id']; ?>">Xóa phim</a>
+<main>
+    <div class="container">
+        <h2 class="text-center text-primary mt-5">Thêm ưu đãi mới</h2>
+        <!-- Form thêm Dữ liệu nhân viên -->
+        <form action="process_addevent.php" method="post">
+            <div class="form-group">
+                <label for="txtidrap">Tên ưu đãi</label>
+                <input type="text" class="form-control" id="txtevent" name="txtevent" placeholder="">
             </div>
-        </div>
 
-    <?php
-    }
-    ?>
+            <div class="form-group">
+                <label for="txttenphim">Ngày bắt đầu</label>
+                <input type="text" class="form-control" id="txtdate" name="txtdate" placeholder="">
 
+            </div>
+            <div class="form-group">
+                <label for="txtdienvien">Mô tả</label>
+                <input type="text" class="form-control" id="txttomtat" name="txttomtat" placeholder="">
 
-    <body>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-            $('#delete').click(function() {
-                alert('Phim đã xóa!');
-            });
-        </script>
-    </body>
+            </div>
+            <div class="form-group">
+                <label for="txttomtat">Điều khoản</label>
+                <input type="text" class="form-control" id="txtdieukhoan" name="txtdieukhoan" placeholder="">
 
-</div>
-<!-- End of .container -->
-
-</html>
+            </div>
+            <div class="form-group">
+                <label for="txthinhanh">Hình ảnh</label>
+                <input type="text" class="form-control" id="txthinhanh" name="txthinhanh" placeholder="">
+                <button type="submit" name="btnthem" class="btn btn-primary" value="luu lai">Thêm ưu đãi</button>
+        </form>
+    </div>
+</main>

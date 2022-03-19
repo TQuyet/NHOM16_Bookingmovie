@@ -37,7 +37,8 @@ CREATE TABLE `tbl_event` (
   `date` int(11) NOT NULL,
   `decs` varchar(3000) NOT NULL,
   `proviso` varchar(3000) NOT NULL,
-  `image` varchar(500) NOT NULL
+  `image` varchar(500) NOT NULL,
+   PRIMARY KEY (`event_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `tbl_event` (`event_id`, `name`, `date`, `decs`, `proviso`, `image`) VALUES
@@ -63,7 +64,9 @@ Sản phẩm có mặt tại các cụm rạp trên toàn quốc.
 Nhanh chân đến CGV check in ly trà sữa siêu thơm ngon ngay thôi nào!', 'https://www.cgv.vn/media/wysiwyg/2022/022022/350x495.jpg'),
 (6, 'MUA 02 VÉ TẶNG 01 CGV COMBO', '20220319', '- Khách hàng khi sử dụng thẻ do Mastercard phát hành thực hiện giao dịch mua 02 vé xem phim CGV tại quầy sẽ được tặng miễn phí 01 CGV Combo ( 02 nước lớn 22 OZ, 01 bắp lớn 32 oz)', '- Bước 1: Mang thẻ “MASTERCARD” đến các rạp chiếu phim CGV trên toàn quốc.
 - Bước 2: Thông báo với rạp tham gia chương trình khuyến mãi “MUA 02 VÉ TẶNG 01 CGV COMBO BẰNG THẺ MASTERCARD” trước khi chọn vé.
-- Bước 3: Chọn vé và thanh toán bẳng thẻ MASTERCARD theo hướng dẫn của nhân viên rạp, nhận CGV Combo miễn phí.', 'https://www.cgv.vn/media/wysiwyg/2021/042021/Mastercard_350X495.jpg'),
+- Bước 3: Chọn vé và thanh toán bẳng thẻ MASTERCARD theo hướng dẫn của nhân viên rạp, nhận CGV Combo miễn phí.', 'https://www.cgv.vn/media/wysiwyg/2021/042021/Mastercard_350X495.jpg')
+
+
 
 -- --------------------------------------------------------
 

@@ -13,6 +13,6 @@ $ketqua = mysqli_query($conn, $sql);
 if (!$ketqua) {
     header("location: error.php");
 } else {
-    header("location: adminn.php");
+    echo "Đã xóa phim !";
 }
 mysqli_close($conn);
