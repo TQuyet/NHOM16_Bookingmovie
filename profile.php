@@ -1,6 +1,5 @@
 <?php include('header.php');
 if (!isset($_SESSION['user'])) {
-	header('location:login.php');
 	$qry2 = mysqli_query($con, "select user_id from tbl_login where user_id='" . $_GET['id'] . "'");
 	$user = mysqli_fetch_array($qry2);
 }
@@ -26,6 +25,7 @@ if (!isset($_SESSION['user'])) {
 										<p class="p-link" style="font-size:15px"><b>Giới tính : </b><?php echo $user['gender']; ?></p>
 										<p class="p-link" style="font-size:15px"><b>Số điện thoại : </b><?php echo $user['phone']; ?></p>
 										<p class="p-link" style="font-size:15px"><b>Địa chỉ : </b><?php echo $user['address']; ?></p>
+										<a class="btn btn-primary" href="update_user.php?id=<?php echo $user['user_id']; ?>">Sửa</a>
 									</div>
 								</div>
 							</div>
