@@ -28,6 +28,43 @@ CREATE TABLE `tbl_contact` (
   `subject` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+-- Table structure for table `tbl_event`
+
+CREATE TABLE `tbl_event` (
+  `event_id` int(10) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `date` int(11) NOT NULL,
+  `decs` varchar(3000) NOT NULL,
+  `proviso` varchar(3000) NOT NULL,
+  `image` varchar(500) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `tbl_event` (`event_id`, `name`, `date`, `decs`, `proviso`, `image`) VALUES
+(1, 'HAPPINESS COMBO - CHÀO MỪNG NGÀY QUỐC TẾ HẠNH PHÚC', '20220319', '- Happiness Combo trị giá 149K bao gồm 01 bắp Ngọt lớn + 01 nước siêu lớn + 01 Ly Nhân Vật tự chọn (Fast9/Infuser/Kitty) và 01 gói khăn cồn.
+*Đổi sang Ly Line 3/ Jungle Brown + 49K
+*Đổi sang Happy Tiger (Ly Dần Vui Vẻ) + 89K', '- Chương trình áp dụng cho giao dịch Offline tại quầy.
+- Phụ thu khi đổi vị bắp và nước theo quy định của CGV.
+- Số lượng ly nhân vật phụ thuộc vào số lượng mà rạp hiện có.
+- BETA có quyền thay đổi thể lệ mà không cần báo trước.', 'https://www.cgv.vn/media/wysiwyg/2022/032022/d_c.jpg'),
+(2, 'THỨ TƯ VUI VẺ - VÉ PHIM ƯU ĐÃI', '20220319', 'Đến BETA vào thứ tư hàng tuần để tận hưởng những bộ phim cực hay với giá cực ưu đãi các bạn nhé! Không cần chờ đợi đến cuối tuần, hãy đến BETA để nạp lại năng lượng nào!', '- Giá vé Thứ Tư Vui Vẻ áp dụng cho ghế thường, ghế VIP, ghế Deluxe và ghế đôi. Giá vé trên chưa bao gồm phụ thu cho ghế Sweetbox và các phim định dạng Dolby Atmos
+- Giá vé Thứ Tư Vui Vẻ không áp dụng vào các ngày lễ, Tết, suất chiếu đặc biệt và định dạng phim IMAX
+- Giá vé Thứ Tư Vui Vẻ sẽ không áp dụng vào ngày công chiếu của phim', 'https://www.cgv.vn/media/wysiwyg/2021/112021/350x495_2x-100.jpg'),
+(3, 'CHÂM ĐẦY COCA - XEM PHIM THẢ GA !!!', '20220319', 'Mỗi khách hàng có Ly Dần Vui Vẻ (Ly Happy Tiger 2022) khi mang lên rạp và có phát sinh giao dịch tại quầy Concession (quầy Bắp & Nước) sẽ được 01 lần châm đầy nước ngọt vào ly.', '- Khách hàng có Ly con Hổ (Ly Happy Tiger 2022).
+- Có phát sinh giao dịch tại quầy Concession (quầy Bắp & Nước).
+- Mỗi khách hàng đủ điều kiện trên chỉ được châm đầy 01 lần/ ngày.
+- CGV có quyền thay đổi thể lệ mà không cần báo trước.', 'https://www.cgv.vn/media/wysiwyg/2022/032022/WEB_350x495.jpg'),
+(4, 'BETA RA MẮT TRÀ SỮA ĐƯỜNG NÂU', '20220319', 'Ra mắt thức uống mới siêu ngọt ngào Brown Sugar Milk Tea.
+Trà sữa đường nâu với công thức đậm đà, thơm ngon chỉ có tại CGV.', 'Siêu phẩm bao gồm 2 size:
+- Size 22Oz: 48k
+- Size 32Oz: 58k
+- Ngoài ra các bạn có thể đổi vị qua trà sữa đường nâu trong các Combo chỉ từ 9k
+Sản phẩm có mặt tại các cụm rạp trên toàn quốc.
+Nhanh chân đến CGV check in ly trà sữa siêu thơm ngon ngay thôi nào!', 'https://www.cgv.vn/media/wysiwyg/2022/022022/350x495.jpg'),
+(6, 'MUA 02 VÉ TẶNG 01 CGV COMBO', '20220319', '- Khách hàng khi sử dụng thẻ do Mastercard phát hành thực hiện giao dịch mua 02 vé xem phim CGV tại quầy sẽ được tặng miễn phí 01 CGV Combo ( 02 nước lớn 22 OZ, 01 bắp lớn 32 oz)', '- Bước 1: Mang thẻ “MASTERCARD” đến các rạp chiếu phim CGV trên toàn quốc.
+- Bước 2: Thông báo với rạp tham gia chương trình khuyến mãi “MUA 02 VÉ TẶNG 01 CGV COMBO BẰNG THẺ MASTERCARD” trước khi chọn vé.
+- Bước 3: Chọn vé và thanh toán bẳng thẻ MASTERCARD theo hướng dẫn của nhân viên rạp, nhận CGV Combo miễn phí.', 'https://www.cgv.vn/media/wysiwyg/2021/042021/Mastercard_350X495.jpg'),
+
 -- --------------------------------------------------------
 
 --
