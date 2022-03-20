@@ -4,6 +4,7 @@ if (!$con) {
     die("Kết nối thất bại");
 }
 if (isset($_POST['btnsave'])) {
+    $userid = $_POST['userid'];
     $name = $_POST['ten'];
     $ngaysinh = $_POST['ns'];
     $gioitinh = $_POST['gioitinh'];
@@ -11,7 +12,7 @@ if (isset($_POST['btnsave'])) {
     $diachi = $_POST['diachi'];
     $image = $_POST['hinhanh'];
 
-    $sql = "UPDATE tbl_login SET name ='$name', date_of_birth = '$ngaysinh', gender = '$gioitinh', phone = '$phone', address = '$diachi', image ='$image' WHERE user_id ='" . $_SESSION['user'] . "'";
+    $sql = "UPDATE tbl_login SET name ='$name', date_of_birth = '$ngaysinh', gender = '$gioitinh', phone = '$phone', address = '$diachi', image ='$image' WHERE id = '$usersid' ";
     $ketqua = mysqli_query($con, $sql);
     if (!$ketqua) {
         header("location: error.php");
