@@ -75,12 +75,21 @@ CREATE TABLE `tbl_login` (
   `user_type` int(1) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+ALTER TABLE `tbl_login` (
+  `name` varchar(20) NOT NULL,
+  `date_of_birth` date NULL,
+  `gender` varchar(5) NOT NULL,
+  `phone` int(11) NULL,
+  `address` varchar(100) NOT NULL,
+  `image` varchar(5000) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 INSERT INTO `tbl_login` (`id`, `user_id`, `username`, `password`, `user_type`) VALUES
 (1, 0, 'admin', 'password', 0),
 (2, 4, 'quyet', 'password', 1),
 (3, 2, 'quyet1', 'password', 1);
-
+(20, 3872, 'flythesuky1217@gmail.com', '123', 1,'Hữu Báchh','2012-03-01','Nam','839487622','6 Thanh Nhàn, Hai Bà Trưng, Hà Nội','https://image.thanhnien.vn/w1024/Uploaded/2022/abfluao/2020_08_19/h6_hjjy.jpgs',)
 
 CREATE TABLE `tbl_movie` (
   `movie_id` int(11) NOT NULL,
