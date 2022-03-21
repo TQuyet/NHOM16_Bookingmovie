@@ -20,13 +20,6 @@ INSERT INTO `tbl_bookings` (`book_id`, `ticket_id`, `t_id`, `user_id`, `show_id`
 --
 -- Dumping data for table `tbl_bookings`
 
-CREATE TABLE `tbl_contact` (
-  `contact_id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `mobile` int(11) NOT NULL,
-  `subject` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 -- Table structure for table `tbl_event`
