@@ -8,9 +8,9 @@ $user = mysqli_fetch_array($qry2);
     <div class="container">
         <h3 class="text-center text-primary mt-5">Cập nhật Thông Tin Người Dùng ( <?php echo $user['name']; ?>)</h3>
         <form action="process_update_user.php" method="post">
-        <div class="form-group">
+            <div class="form-group">
                 <label for="txtid">Id của người dùng</label>
-                <input type="text" disabled="disabled" class="form-control" id="txtid" name="iduser" placeholder="" value="<?php echo $user['id']; ?>">
+                <input type="text" class="form-control" id="txtid" name="iduser" placeholder="" value="<?php echo $user['id']; ?>">
             </div>
             <div class="form-group">
                 <label for="txtten">Họ và tên</label>
