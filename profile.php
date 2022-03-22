@@ -31,11 +31,6 @@ if (!isset($_SESSION['user'])) {
 							</div>
 						</div>
 					<?php
-					} else {
-					?>
-						<h3 style="color:#444; font-size:23px;" class="text-center">Bạn chưa điền thông tin !!</h3>
-						<button class="text-center">Xin hãy điền tại đây</button>
-					<?php
 					}
 					?>
 				</div>
