@@ -1,6 +1,5 @@
 <?php
 $idphim = $_GET['id'];
-echo $idphim;
 
 $conn = mysqli_connect('localhost', 'root', '', 'bookingmovie1');
 if (!$conn) {
